@@ -1,3 +1,4 @@
+process.env.TZ = 'Asia/Taipei';
 var http = require('http');
 var express = require('express');
 var Firebase = require('firebase');
@@ -340,6 +341,7 @@ app.post('/api/order/create',function(req, resp) {
     
     /** Automatic create a Date time **/
     var today = new Date();
+	
     var Year = today.getFullYear().toString();
     var Month = today.getMonth() + 1 < 10 ? '0' + (today.getMonth() +1 ).toString() : (today.getMonth()+1).toString();
     var Day = today.getDate() < 10 ? '0' + (today.getDate().toString()) : today.getDate().toString() ;
