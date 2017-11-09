@@ -992,5 +992,5 @@ function updateDataEvent(type) {
 var server = http.createServer(app);
 //server.listen(server_port, server_ip_address,function() {
 pp.listen(port, function(){
-     console.log(`${pkg.name} listening on port ${port}`)
+     console.log(`${pkg.name} listening on port ${port}`);
 })
