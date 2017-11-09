@@ -3,7 +3,7 @@ var http = require('http');
 var express = require('express');
 var Firebase = require('firebase');
 
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var server_port = process.env.PORT|| config.port || 8080;
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
 var Ref = new Firebase("https://foodpos.firebaseio.com/");
@@ -13,9 +13,8 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 /** Test API **/
-app.post('/test', function(req, resp) {
-    console.log('test');
-    resp.send('test');
+app.get('/', function(req, res) {
+  res.send('Hello World!');
 });
 
 
@@ -991,6 +990,7 @@ function updateDataEvent(type) {
 /////////////// Server Start //////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 var server = http.createServer(app);
-server.listen(server_port, server_ip_address,function() {
-   console.log( "Listening on " + server_ip_address + ", port " + server_port );
-});
+//server.listen(server_port, server_ip_address,function() {
+pp.listen(port, function(){
+     console.log(`${pkg.name} listening on port ${port}`)
+})

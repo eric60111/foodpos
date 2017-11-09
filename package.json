@@ -11,6 +11,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node server.js"
+	"heroku": "NODE_ENV=production node index"
   },
   "author": "",
   "license": "ISC"
